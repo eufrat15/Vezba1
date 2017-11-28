@@ -1,9 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aleksandar.myapplication.SecondActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</android.support.constraint.ConstraintLayout>
+
+    <!-- AppBarLayot -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Standard toolbar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/second_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:title="@string/activity_first_toolbar_title">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- ime glumca -->
+    <TextView
+        android:id="@+id/imeGlumac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:layout_below="@id/appbar"
+        android:layout_marginTop="12sp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
+
+
+    <!-- input datum rodjenja glumca -->
+    <TextView
+        android:id="@+id/inputDatumRodjenjaGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imeGlumac"
+        android:layout_centerHorizontal="true"
+        android:textSize="11sp"
+        android:textStyle="italic" />
+
+
+    <!-- label biografija glumca -->
+    <TextView
+        android:id="@+id/labelBiografijaGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputDatumRodjenjaGlumac"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12sp"
+        android:textColor="#000000"
+        android:text="@string/biografija"
+        android:textSize="12sp" />
+
+    <!-- input biografija glumac -->
+    <TextView
+        android:id="@+id/inputBiografijaGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelBiografijaGlumac"
+        android:layout_centerHorizontal="true"
+        android:textSize="10sp" />
+
+
+    <!-- label ocena glumca -->
+    <TextView
+        android:id="@+id/labelOcenaGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputBiografijaGlumac"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12sp"
+        android:text="@string/ocena"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+
+    <!-- ocena glumca  -->
+    <TextView
+        android:id="@+id/inputOcenaGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelOcenaGlumac"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textStyle="italic" />
+
+
+    <!-- Rating Bar -->
+    <RatingBar
+        android:id="@+id/inputGLumacRatingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputOcenaGlumac"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:progressBackgroundTint="#44444444"
+        android:progressTint="#ffd700"
+        android:scaleX=".6"
+        android:scaleY=".6"
+        android:secondaryProgressTint="#000000" />
+
+
+    <!--  filmovi -->
+    <TextView
+        android:id="@+id/labelFilmoviGlumac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputGLumacRatingbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14sp"
+        android:textColor="#000000"
+        android:text="@string/filmovi"
+        android:textSize="12sp" />
+
+
+    <!-- lista filmova -->
+    <ListView
+        android:id="@+id/inputListaFilmovaGlumac"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_below="@id/labelFilmoviGlumac" />
+
+
+</RelativeLayout>

@@ -60,7 +60,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
 
     public Dao<Film, Integer> getmFilmDao() throws SQLException {
         if(mFilmDao == null) {
-            mFilmDao = getDao(Glumac.class);
+            mFilmDao = getDao(Film.class);
         }
         return mFilmDao;
     }
