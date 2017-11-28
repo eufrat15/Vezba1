@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <!-- unos imena glumca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ime glumca:"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/glumac_ime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+
+    <!-- unos biografije glumca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Biografija glumca:"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/glumac_biografija"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+
+    <!-- unos ocene glumca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ocena glumca:"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/glumac_ocena"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+
+    <!-- unos datuma rodjenja glumca -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datum rodjenja glumca:"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/glumac_datum_rodjenja"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="date"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+
+    <!-- Ok i Cancel button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="ok" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
