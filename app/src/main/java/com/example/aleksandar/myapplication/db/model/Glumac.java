@@ -19,6 +19,7 @@ public class Glumac {
     public static final String POLJE_IME = "ime";
     public static final String POLJE_BIOGRAFIJA = "biografija";
     public static final String POLJE_OCENA = "ocena";
+    public static final String POLJE_OCENABAR = "ocenabar";
     public static final String POLJE_RODJENJE = "datum";
     public static final String POLJE_FILM = "film";
 
@@ -34,6 +35,9 @@ public class Glumac {
 
     @DatabaseField(columnName = POLJE_OCENA)
     private double glumacOcena;
+
+    @DatabaseField(columnName = POLJE_OCENABAR)
+    private float glumacOcenabar;
 
     @DatabaseField(columnName = POLJE_RODJENJE)
     private Date glumacDatumRodjenja;
@@ -76,6 +80,14 @@ public class Glumac {
 
     public void setGlumacOcena(double glumacOcena) {
         this.glumacOcena = glumacOcena;
+    }
+
+    public float getGlumacOcenabar() {
+        return glumacOcenabar;
+    }
+
+    public void setGlumacOcenabar(float glumacOcenabar) {
+        this.glumacOcenabar = glumacOcenabar;
     }
 
     public Date getGlumacDatumRodjenja() {

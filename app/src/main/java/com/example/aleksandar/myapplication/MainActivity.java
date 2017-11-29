@@ -33,6 +33,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static java.lang.Double.parseDouble;
+
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 final EditText glumacIme = (EditText) dialog.findViewById(R.id.glumac_ime);
                 final EditText glumacBiografija = (EditText) dialog.findViewById(R.id.glumac_biografija);
                 final EditText glumacOcena = (EditText) dialog.findViewById(R.id.glumac_ocena);
+                final EditText glumacOcenabar = (EditText) dialog.findViewById(R.id.glumac_ocena_bar);
                 final EditText glumacDatumRodjenja = (EditText) dialog.findViewById(R.id.glumac_datum_rodjenja);
 
                 Button ok = (Button) dialog.findViewById(R.id.ok);
@@ -125,11 +128,21 @@ public class MainActivity extends AppCompatActivity {
 
                         double ocena = 0;
                         try {
-                            ocena = Double.parseDouble(glumacOcena.getText().toString());
+                            ocena = parseDouble(glumacOcena.getText().toString());
                         } catch (NumberFormatException e) {
                             Toast.makeText(MainActivity.this, "Ocena mora biti broj.", Toast.LENGTH_SHORT).show();
                             return;
                         }
+
+                        float ocenaBar = 0;
+                        try {
+                            ocenaBar = Float.parseFloat(glumacOcenabar.getText().toString());
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(MainActivity.this, "Mora biti broj od 1-5", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+
                         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
                         Date datum = null;
                         try {
@@ -143,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                         glumac.setGlumacIme(ime);
                         glumac.setGlumacBiografija(biografija);
                         glumac.setGlumacOcena(ocena);
+                        glumac.setGlumacOcenabar(ocenaBar);
                         glumac.setGlumacDatumRodjenja(datum);
 
 

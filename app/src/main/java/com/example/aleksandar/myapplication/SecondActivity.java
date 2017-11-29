@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,6 +76,8 @@ public class SecondActivity extends AppCompatActivity {
             String biografija = glumac.getGlumacBiografija();
             double ocena = glumac.getGlumacOcena();
             String stringOcena = Double.toString(ocena);
+            RatingBar ocenaBar = (RatingBar) findViewById(R.id.glumac_ocena_bar);
+            ocenaBar.setRating(glumac.getGlumacOcenabar());
             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
             String datum = sdf.format(glumac.getGlumacDatumRodjenja());
 
@@ -305,6 +308,7 @@ public class SecondActivity extends AppCompatActivity {
             final EditText glumacIme = (EditText) dialog.findViewById(R.id.glumac_ime);
             final EditText glumacBiografija = (EditText) dialog.findViewById(R.id.glumac_biografija);
             final EditText glumacOcena = (EditText) dialog.findViewById(R.id.glumac_ocena);
+            final EditText glumacOcenabar = (EditText) dialog.findViewById(R.id.glumac_ocena_bar);
             final EditText glumacDatumRodjenja = (EditText) dialog.findViewById(R.id.glumac_datum_rodjenja);
 
             glumacIme.setText(glumac.getGlumacIme());
@@ -313,6 +317,10 @@ public class SecondActivity extends AppCompatActivity {
             double ocena = glumac.getGlumacOcena();
             String stringOcena = Double.toString(ocena);
             glumacOcena.setText(stringOcena);
+
+            float ocenaBar = glumac.getGlumacOcenabar();
+            String stringOcenabar = Float.toString(ocenaBar);
+            glumacOcenabar.setText(stringOcenabar);
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
             String datum = sdf.format(glumac.getGlumacDatumRodjenja());
@@ -343,6 +351,15 @@ public class SecondActivity extends AppCompatActivity {
                         Toast.makeText(SecondActivity.this, "Ocena mora biti broj", Toast.LENGTH_SHORT).show();
                         return;
                     }
+
+                    float ocenabar = 0;
+                    try {
+                        ocenabar = Float.parseFloat(glumacOcenabar.getText().toString());
+                    }   catch (NumberFormatException e) {
+                        Toast.makeText(SecondActivity.this, "Mora biti broj od 1-5", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
                     Date datum = null;
                     try {
@@ -355,6 +372,7 @@ public class SecondActivity extends AppCompatActivity {
                     glumac.setGlumacIme(ime);
                     glumac.setGlumacBiografija(biografija);
                     glumac.setGlumacOcena(ocena);
+                    glumac.setGlumacOcenabar(ocenabar);
                     glumac.setGlumacDatumRodjenja(datum);
 
                     try {
